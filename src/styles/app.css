@@ -1,0 +1,34 @@
+@media screen and (min-height: 1000px) {
+    .app-footer {
+        position: fixed;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .app-intro-text {
+        max-width: 700px;
+    }
+}
+
+
+@media screen and (min-width: 900px) and (max-width: 1700px) {
+    .app-intro-text {
+        max-width: 560px;
+    }
+}
+
+.free-text-tabs-parent {
+    padding: 0 15% 20px 15%;
+    /* same as search box*/
+}
+
+.tabIcon {
+    height: 24px;
+    width: 24px;
+}
+
+.tabLabel {
+    vertical-align: text-bottom;
+    margin-left: 5px;
+}

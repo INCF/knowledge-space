@@ -1,0 +1,8 @@
+1. // Occupy all availalbe width
+2. // adjust search box
+3. // multiple clicks should show same zoom level as new search in short graph area
+   // coordinates should get reset
+4. Add some colors and attraction
+5. Run node app as a service on dev machine
+6. Read environment variables 
+7. Try html multiline lable on node

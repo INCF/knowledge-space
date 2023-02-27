@@ -1,0 +1,62 @@
+{
+  "name": "knowledgespace",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.9.4",
+    "@material-ui/icons": "^3.0.2",
+    "@material-ui/lab": "^3.0.0-alpha.30",
+    "axios": "^0.19.1",
+    "crypto-js": "^3.3.0",
+    "d3": "^5.15.0",
+    "dagre-d3": "^0.6.4",
+    "downshift": "^3.4.8",
+    "elasticsearch": "^15.5.0",
+    "express": "^4.17.1",
+    "keycode": "^2.2.0",
+    "lodash": "^4.17.19",
+    "neode": "^0.3.7",
+    "nuka-carousel": "^4.6.2",
+    "prop-types": "^15.5.10",
+    "query-string": "^6.13.1",
+    "react": "^16.13.1",
+    "react-alice-carousel": "^1.17.3",
+    "react-dom": "^16.13.1",
+    "react-event-listener": "^0.6.6",
+    "react-ga": "^2.7.0",
+    "react-lines-ellipsis": "^0.13.2",
+    "react-markdown": "^4.3.1",
+    "react-redux": "^5.1.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "3.4.1",
+    "react-slick": "^0.25.2",
+    "react-treeview": "^0.4.7",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-saga": "^0.16.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.0.1"
+  },
+  "scripts": {
+    "server": "npx nodemon server/server.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
