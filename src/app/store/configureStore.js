@@ -2,7 +2,7 @@ import {createStore, applyMiddleware} from 'redux'
 import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
 
 import createSagaMiddleware from 'redux-saga'
-import rootReducer from '../reducers/rootReducer'
+import rootReducer from 'src/app/reducers/rootReducer';
 import rootSaga from '../sagas/rootSaga'
 
 export default function configureStore(preloadedState) {
@@ -21,8 +21,8 @@ export default function configureStore(preloadedState) {
 
   if (process.env.NODE_ENV !== 'production') {
     if (module.hot) {
-      module.hot.accept('app/reducers/rootReducer', () => {
-        const newRootReducer = require('app/reducers/rootReducer').default
+      module.hot.accept('./app/reducers/rootReducer', () => {
+        const newRootReducer = require('./app/reducers/rootReducer').default
         store.replaceReducer(newRootReducer)
       })
     }

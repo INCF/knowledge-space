@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-
+import DarkMode from './DarkMode'; 
 import withRoot from 'withRoot'
 import Typography from '@material-ui/core/Typography'
 import {withStyles} from '@material-ui/core/styles'
-
+import './App.css';
 import Main from './Main'
 import GA from 'features/googleAnalytics/GoogleAnalytics'
 
