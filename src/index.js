@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import configureStore from "app/store/configureStore";
+import configureStore from "./app/store/configureStore";
 
 const store = configureStore();
 
@@ -10,7 +10,7 @@ const store = configureStore();
 const rootEl = document.getElementById("root");
 
 const render = () => {
-  const App = require("app/layout/App").default;
+  const App = require("./app/layout/App").default;
   console.debug("render me");
   ReactDOM.render(
     <Provider store={store}>
