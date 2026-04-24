@@ -78,7 +78,6 @@ const esUtils = {
     return esDataSpaceClient
       .search({
         index: "scigraph",
-        type: "_doc",
         body,
       })
       .then((response) => {
@@ -95,7 +94,6 @@ const esUtils = {
     return esDataSpaceClient
       .get({
         index: "scigraph",
-        type: "_doc",
         id: slug,
       })
       .then((response) => {

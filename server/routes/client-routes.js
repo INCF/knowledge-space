@@ -10,7 +10,6 @@ router.get("/auto-suggest", function (req, res) {
   esDataSpaceClient
     .search({
       index: "scigraph",
-      type: "_doc",
       body: req.query.body,
     })
     .then((response) => {
@@ -39,7 +38,6 @@ router.get("/details", function (req, res) {
   esDataSpaceClient
     .search({
       index: "scigraph",
-      type: "_doc",
       body: req.query.body,
     })
     .then((response) => {
@@ -135,8 +133,7 @@ router.get("/source-data-by-entity", function (req, res) {
 router.get("/literature-by-curie-paths", function (req, res) {
   esDataSpaceClient
     .search({
-      index: "pubmed-19",
-      type: "_doc", // 'publication',
+      index: "pubmed",
       body: req.query.body,
     })
     .then((response) => {
