@@ -197,7 +197,7 @@ export const searchStyles = (theme) => ({
   },
   SearchInput: {
     padding: "5px 10px",
-    border: "2px solid #ccc",
+    border: "2px solid " + theme.palette.border,
     borderRadius: "8px",
   },
   searchAreaWrapper: {
@@ -210,16 +210,18 @@ export const searchStyles = (theme) => ({
   },
   searchSubtitle: {
     paddingTop: "15px",
-    color: "#005995",
+    color: theme.palette.link,
     fontSize: "1.2rem",
   },
   descriptionText: {
-    color: "#626262",
+    color: theme.palette.textSecondary,
     marginTop: "50px",
   },
   dataSourceText: {
-    color: "#626262",
+    color: theme.palette.textSecondary,
   },
+  // The intro text is overlaid on the neuroscience banner artwork, so it keeps a
+  // fixed dark color rather than following the theme.
   introText: {
     padding: "20px",
     color: "#626262",
@@ -275,11 +277,11 @@ export const searchStyles = (theme) => ({
     zIndex: 1,
   },
   searchButton: {
-    backgroundColor: "#005995",
-    color: "#fff",
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
     "&:hover": {
-      backgroundColor: "#005995",
-      color: "#fff",
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.contrastText,
       opacity: "0.8",
     },
     minHeight: "40px",
@@ -364,11 +366,11 @@ export const searchStyles = (theme) => ({
     [theme.breakpoints.up("sm")]: {
       fontSize: theme.typography.button.fontSize,
     },
-    color: theme.palette.common.black,
+    color: theme.palette.text.primary,
     "&:hover": { cursor: "pointer" },
   },
   tileBar: {
-    backgroundColor: "#e0e0e0",
+    backgroundColor: theme.palette.surfaceAlt,
   },
   carouselParent: {
     position: "relative",
@@ -399,7 +401,7 @@ export const searchStyles = (theme) => ({
   },
   copyrightText: {
     justifyContent: "center",
-    color: "#626262",
+    color: theme.palette.textSecondary,
   },
   partnerTextWrapper: {
     [theme.breakpoints.down("md")]: {
@@ -411,13 +413,13 @@ export const searchStyles = (theme) => ({
     [theme.breakpoints.down("md")]: {
       marginRight: "0",
     },
-    color: "#626262",
+    color: theme.palette.textSecondary,
     paddingTop: "5px",
     // marginLeft:'20px',
     marginRight: "180px",
   },
   footer: {
-    borderTop: "1px solid #ddd",
+    borderTop: "1px solid " + theme.palette.divider,
     marginTop: "50px",
     bottom: 0,
     width: "100%",

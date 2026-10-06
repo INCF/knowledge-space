@@ -16,7 +16,7 @@ const styles = (theme) => ({
     margin: "auto",
     width: "100%",
     alignItems: "flex-start",
-    border: "1px solid #CCC",
+    border: "1px solid " + theme.palette.border,
     margin: "10px",
   },
   heading: {

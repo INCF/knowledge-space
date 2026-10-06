@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import configureStore from "app/store/configureStore";
+// Relative, not the `styles/...` absolute form used elsewhere: this file sits in
+// src/, so a relative path also resolves when NODE_PATH=src is not set.
+import "./styles/theme.css";
 
 const store = configureStore();
 

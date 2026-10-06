@@ -34,23 +34,29 @@ text {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serf;
   font-size: 14px;
   cursor: pointer;
+  /* dagre-d3 does not set label color itself, so without this node labels
+     render black on black in dark mode. */
+  fill: var(--ks-graph-label, #000);
 }
 
+/* Colors come from the custom properties defined in src/styles/theme.css so the
+   graph follows the active light/dark theme. Light mode keeps the original
+   values (#fff node fill, #333 strokes, blue arrowheads). */
 .node rect {
-  stroke: #333;
-  fill: #fff;
+  stroke: var(--ks-graph-node-stroke, #333);
+  fill: var(--ks-graph-node-fill, #fff);
   stroke-width: 1.5px;
   cursor: pointer;
 }
 
 .edgePath path.path {
-  stroke: #333;
+  stroke: var(--ks-graph-edge, #333);
   fill: none;
   stroke-width: 1.5px;
 }
 
 .arrowhead {
-  stroke: blue;
-  fill: blue;
+  stroke: var(--ks-graph-arrow, blue);
+  fill: var(--ks-graph-arrow, blue);
   stroke-width: 1.5px;
 }

@@ -8,7 +8,34 @@
     <link rel="stylesheet" href="%PUBLIC_URL%/react-treeview.css">
         
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#fafafa">
+    <script>
+      /*
+       * Resolve the light/dark theme and paint the page background before React
+       * loads, otherwise a dark-mode visitor sees a flash of the light palette.
+       * Keep this in sync with src/common/theme/theme.js.
+       */
+      (function () {
+        var mode = 'light';
+        try {
+          var stored = window.localStorage.getItem('knowledgespace-theme');
+          if (stored === 'dark' || stored === 'light') {
+            mode = stored;
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            mode = 'dark';
+          }
+        } catch (e) {
+          // Storage blocked or unavailable: fall back to light.
+        }
+        document.documentElement.setAttribute('data-theme', mode);
+        var background = mode === 'dark' ? '#121212' : '#fafafa';
+        document.documentElement.style.backgroundColor = background;
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) {
+          meta.setAttribute('content', background);
+        }
+      })();
+    </script>
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/

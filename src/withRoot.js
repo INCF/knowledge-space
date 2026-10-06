@@ -1,45 +1,17 @@
 import React from 'react'
-import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles'
-import purple from '@material-ui/core/colors/purple'
-import green from '@material-ui/core/colors/green'
-import CssBaseline from '@material-ui/core/CssBaseline'
 
-// A theme with custom primary and secondary color.
-// It's optional.
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#003e68',
-      main: '#005995',
-      dark: '#337aaa'
-    },
-    secondary: {
-      light: '#f5ff66',
-      main: '#bfd730',
-      dark: '#8ba600'
-    },
-    dark: {
-      light: '#4f4f4f',
-      main: '#272727',
-      dark: '#000000'
-    }
-  },
-  typography: {
-    useNextVariants: true,
-    fontFamily:  "\"Arial\", \"Helvetica\", \"Roboto\", sans-serif",
-  }
-})
+// The application-wide Material-UI theme lives in `common/theme/theme.js`, and
+// ThemeManager holds the active light/dark mode and provides it to
+// `withTheme`. Keeping this HOC thin means the whole tree sits below a single
+// theme provider, so switching modes re-themes every `withStyles` consumer.
+import ThemeManager from 'common/theme/ThemeContext'
 
 function withRoot(Component) {
   function WithRoot(props) {
-    // MuiThemeProvider makes the theme available down the React tree
-    // thanks to React context.
     return (
-      <MuiThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline/>
-        <Component {...props}/>
-      </MuiThemeProvider>
+      <ThemeManager>
+        <Component {...props} />
+      </ThemeManager>
     )
   }
 

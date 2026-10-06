@@ -1,0 +1,122 @@
+/*
+ * Global, theme-aware base styles.
+ *
+ * Material-UI's own components are themed through JSS, so they are covered by
+ * the palette in `src/common/theme/theme.js`. This file exists for the things
+ * JSS does not reach: the D3/dagre graph in `features/brainRegion/brainRegionSearch.css`,
+ * `react-markdown` output, bare <a> tags and the <body> itself.
+ *
+ * The values below mirror `src/common/theme/theme.js`; keep the two in sync.
+ * `data-theme` is set on <html> by the inline script in `public/index.html`
+ * before React boots, which is what prevents a flash of the wrong theme.
+ */
+
+:root {
+  --ks-background: #fafafa;
+  --ks-surface: #ffffff;
+  --ks-surface-alt: #e0e0e0;
+  --ks-text: rgba(0, 0, 0, 0.87);
+  --ks-text-secondary: #626262;
+  --ks-border: rgba(0, 0, 0, 0.12);
+  --ks-link: #005995;
+
+  --ks-graph-node-fill: #fff;
+  --ks-graph-node-stroke: #333;
+  --ks-graph-edge: #333;
+  --ks-graph-label: #000;
+  --ks-graph-arrow: blue;
+}
+
+:root[data-theme='dark'] {
+  --ks-background: #121212;
+  --ks-surface: #1e1e1e;
+  --ks-surface-alt: #242424;
+  --ks-text: #f5f5f5;
+  --ks-text-secondary: #bdbdbd;
+  --ks-border: rgba(255, 255, 255, 0.16);
+  --ks-link: #64b5f6;
+
+  --ks-graph-node-fill: #2a2a2a;
+  --ks-graph-node-stroke: #6b6b6b;
+  --ks-graph-edge: #6b6b6b;
+  --ks-graph-label: #f5f5f5;
+  --ks-graph-arrow: #64b5f6;
+}
+
+html {
+  background-color: var(--ks-background);
+}
+
+body {
+  background-color: var(--ks-background);
+  color: var(--ks-text);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* Cards, menus, dialogs and popovers: smooth theme switch without animating
+   every property. */
+.MuiPaper-root {
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/*
+ * Bare anchors (react-markdown output, inline links in page copy). Material-UI's
+ * <Link> ships its own more specific classes and keeps its palette-driven color.
+ */
+a {
+  color: var(--ks-link);
+  transition: color 200ms ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* react-markdown output */
+pre,
+code,
+kbd,
+samp {
+  background-color: var(--ks-surface-alt);
+  color: var(--ks-text);
+}
+
+pre {
+  border: 1px solid var(--ks-border);
+  border-radius: 4px;
+  padding: 12px 16px;
+  overflow-x: auto;
+}
+
+code {
+  border-radius: 3px;
+  padding: 2px 5px;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
+blockquote {
+  border-left: 4px solid var(--ks-link);
+  padding-left: 16px;
+  color: var(--ks-text-secondary);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--ks-border);
+}
+
+table,
+th,
+td {
+  border-color: var(--ks-border);
+}
+
+th {
+  color: var(--ks-text-secondary);
+}

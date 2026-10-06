@@ -12,7 +12,7 @@ import RefreshIcon from '@material-ui/icons/Refresh'
 
 const styles = theme => ({
   searchBar: {
-    borderBottom: '1px solid rgba(0, 0, 0, 0.12)'
+    borderBottom: '1px solid ' + theme.palette.divider
   },
   searchInput: {
     fontSize: theme.typography.fontSize

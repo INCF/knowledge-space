@@ -3,6 +3,7 @@ import { Link as RouterLink, withRouter } from "react-router-dom";
 
 import Logo from "./Logo";
 import NavSearch from "./NavSearch";
+import ThemeToggle from "./ThemeToggle";
 
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
@@ -369,8 +370,10 @@ class Nav extends React.Component {
                   About
                 </Button>
               </Typography>
+              <ThemeToggle />
             </div>
             <div className={classes.sectionMobile}>
+              <ThemeToggle />
               <IconButton
                 aria-haspopup="true"
                 onClick={this.handleMobileMenuOpen}

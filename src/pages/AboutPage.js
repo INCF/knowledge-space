@@ -8,7 +8,6 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 
 import { withStyles } from "@material-ui/core/styles";
-import { fade } from "@material-ui/core/styles/colorManipulator";
 
 import hbp from "imgs/hbp-logo.png";
 import nif from "imgs/nif-logo.png";
@@ -42,7 +41,7 @@ const styles = (theme) => ({
     boxShadow: theme.shadows[3],
     "&:hover": {
       boxShadow: theme.shadows[5],
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: theme.palette.action.hover,
     },
     width: "100%",
   },
@@ -60,14 +59,14 @@ const styles = (theme) => ({
   button: {
     margin: theme.spacing.unit * 2,
     padding: theme.spacing.unit,
-    color: theme.palette.common.white,
+    color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.primary.main,
     "&:hover": {
       backgroundColor: theme.palette.primary.dark,
     },
   },
   link: {
-    color: "#000",
+    color: theme.palette.link,
   },
 });
 

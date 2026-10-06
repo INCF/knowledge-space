@@ -26,7 +26,7 @@ const styles = theme => ({
     overflow: 'hidden',
   },
   searchBar: {
-    borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+    borderBottom: '1px solid ' + theme.palette.divider,
   },
   searchInput: {
     fontSize: theme.typography.fontSize,
